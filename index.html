@@ -1,0 +1,51 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>纯JS数字滚动效果</title>
+<script type="text/javascript" src="index.js"></script>
+<style>
+    body{
+      background-color: #000;
+    }
+
+    .number{
+    	font-size: 64px;
+      color : #fff;
+    }
+
+    .to__led-number {
+			position: relative;
+			font-size: 50px;
+			height: 70px;
+			text-align: center;
+			display: inline-block;
+			vertical-align: middle;
+			box-sizing: border-box;
+    }
+
+    /* .to__led-number--no {
+			width: 19px;
+			background: unset;
+			border: none;
+    } */
+</style>
+</head>
+<body>
+<div class="number"></div>
+<script type="text/javascript">
+  var dom = document.querySelector(".number")
+
+  var digit = new Digit({
+      number : 881.12, // 到达指定数值停止滚动
+      finish : 3, // 整体完成时间
+      speed : 1, // 数值越大，越多数字同时进行翻滚，取值范围（1 ~ 10）
+      direction : "right", // 动画方向
+      dom: dom, // 在指定dom节点插入动画
+  })
+
+  digit.render() // 执行
+</script>
+
+</body>
+</html>
